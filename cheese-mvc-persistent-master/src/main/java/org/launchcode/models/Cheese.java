@@ -1,8 +1,11 @@
 package org.launchcode.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -27,6 +30,9 @@ public class Cheese {
     
     @ManyToOne
     private Category category;
+    
+    @ManyToMany(mappedBy = "cheeses")
+    private List<Menu> menus;
 
     public Cheese(String name, String description) 
     {
@@ -41,7 +47,17 @@ public class Cheese {
         return id;
     }
 
-    public String getName() 
+    public Category getCategory() 
+    {
+		return category;
+	}
+
+	public void setCategory(Category category) 
+	{
+		this.category = category;
+	}
+
+	public String getName() 
     {
         return name;
     }

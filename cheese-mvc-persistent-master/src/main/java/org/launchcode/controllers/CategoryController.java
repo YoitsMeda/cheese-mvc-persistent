@@ -24,7 +24,7 @@ public class CategoryController
 	public String index(Model model) 
 	{
 		model.addAttribute("categoryDao", categoryDao.findAll());
-		model.addAttribute("title", "Category");
+		model.addAttribute("title", "Categories");
 		
 		return "/category/index";
 	}
@@ -33,7 +33,7 @@ public class CategoryController
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String add(Model model) 
 	{
-		model.addAttribute(new Category());
+		model.addAttribute("catergory",new Category());
 		
 		return "/category/add";
 		
