@@ -47,7 +47,7 @@ public class MenuController
 		return "cheese/add";
 	}
 	
-	@RequestMapping(value = "add", method = RequestMethod.GET)
+	@RequestMapping(value = "add", method = RequestMethod.POST)
 	public String processAddMenu(@ModelAttribute @Valid Menu newMenu, Model model, Errors errors) 
 	{
 		if (errors.hasErrors()) 

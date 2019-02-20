@@ -22,26 +22,36 @@ private int id;
 @Size(min=3, max=15)
 private String name;
 
-public String getName() {
+public String getName() 
+{
 	return name;
 }
 
-public void setName(String name) {
+public void setName(String name) 
+{
 	this.name = name;
 }
 
-public int getId() {
+public int getId() 
+{
 	return id;
 }
 
 public Category() { } 
 
 @OneToMany
-@JoinColumn(name = "category_id")
+@JoinColumn(name ="category_id")
 private List<Cheese> cheeses = new ArrayList<>();
 
-
+public List<Cheese> getCheeses()
+{
+ return cheeses;	
+}
 	
+public void setCheeses(List<Cheese> cheeses) 
+{
+	this.cheeses = cheeses;
+}
 	
 
 }//END CLASS

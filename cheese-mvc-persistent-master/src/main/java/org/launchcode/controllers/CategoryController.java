@@ -33,7 +33,7 @@ public class CategoryController
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String add(Model model) 
 	{
-		model.addAttribute("catergory",new Category());
+		model.addAttribute("category",new Category());
 		
 		return "/category/add";
 		
